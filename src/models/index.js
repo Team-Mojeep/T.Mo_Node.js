@@ -5,6 +5,9 @@ const db = {};
 
 const sequelize = new Sequelize({ ...config, sync: false });
 
+db.User = require("./user")(sequelize, Sequelize);
+db.Review = require("./review")(sequelize, Sequelize);
+
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
