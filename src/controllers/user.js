@@ -47,7 +47,8 @@ const login = async(req, res) => {
 
         if (user.password === password) {
             const accessToken = jwt.sign({
-                id: user.id
+                id: user.id,
+                email: user.email
             },
             secretKey,
             {
